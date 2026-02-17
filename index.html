@@ -1,289 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday My Bvvv❤️</title>
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Happy Birthday My Bvvv❤️</title>  <style>  
+/* ===== GLOBAL ==== */  
+*{  
+    margin:0;  
+    padding:0;  
+    box-sizing:border-box;  
+    font-family:'Segoe UI',sans-serif;  
+    scroll-behavior:smooth;  
+}  
+body{  
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);  
+    color:white;  
+    overflow-x:hidden;  
+}  
+  
+/* ===== TOP TIMER ===== */  
+.top-timer{  
+    position:fixed;  
+    top:15px;  
+    left:50%;  
+    transform:translateX(-50%);  
+    padding:12px 28px;  
+    border-radius:40px;  
+    background:rgba(255,255,255,0.2);  
+    backdrop-filter:blur(10px);  
+    font-weight:bold;  
+    z-index:9999;  
+    box-shadow:0 5px 20px rgba(0,0,0,0.25);  
+}  
+  
+/* ===== HERO ===== */  
+.hero{  
+    height:100vh;  
+    display:flex;  
+    flex-direction:column;  
+    justify-content:center;  
+    align-items:center;  
+    text-align:center;  
+    padding:20px;  
+}  
+.hero h1{  
+    font-size:3rem;  
+    text-shadow:0 5px 20px rgba(0,0,0,.3);  
+    animation:fadeUp 1.8s;  
+}  
+.hero p{  
+    max-width:700px;  
+    margin-top:20px;  
+    font-size:1.2rem;  
+    line-height:1.6;  
+    animation:fadeUp 2.2s;  
+}  
+.btn{  
+    margin-top:35px;  
+    padding:14px 35px;  
+    border:none;  
+    border-radius:30px;  
+    background:white;  
+    color:#ff4d88;  
+    font-size:1rem;  
+    cursor:pointer;  
+    transition:.3s;  
+}  
+.btn:hover{transform:scale(1.1);}  
+  
+/* ===== SECTIONS ===== */  
+section{  
+    min-height:100vh;  
+    display:flex;  
+    flex-direction:column;  
+    justify-content:center;  
+    align-items:center;  
+    text-align:center;  
+    padding:70px 20px;  
+}  
+h2{  
+    font-size:2.4rem;  
+    margin-bottom:25px;  
+}  
+.glass{  
+    background:rgba(255,255,255,.18);  
+    backdrop-filter:blur(10px);  
+    padding:30px;  
+    border-radius:25px;  
+    max-width:850px;  
+    line-height:1.9;  
+    font-size:1.1rem;  
+    box-shadow:0 8px 25px rgba(0,0,0,.2);  
+}  
+  
+/* ===== PHOTO GRID ===== */  
+.gallery{  
+    display:grid;  
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));  
+    gap:20px;  
+    width:90%;  
+    max-width:1000px;  
+}  
+.gallery img{  
+    width:100%;  
+    border-radius:20px;  
+    box-shadow:0 10px 20px rgba(0,0,0,.25);  
+    transition:.4s;  
+}  
+.gallery img:hover{  
+    transform:scale(1.05);  
+}  
+  
+/* ===== FLOATING HEARTS ===== */  
+.heart{  
+    position:fixed;  
+    bottom:-20px;  
+    font-size:20px;  
+    animation:float 6s linear infinite;  
+    opacity:.7;  
+    pointer-events:none;  
+}  
+@keyframes float{  
+    0%{transform:translateY(0) scale(1);}  
+    100%{transform:translateY(-110vh) scale(1.8);}  
+}  
+  
+/* ===== STARS ===== */  
+.star{  
+    position:fixed;  
+    width:3px;  
+    height:3px;  
+    background:white;  
+    border-radius:50%;  
+    opacity:.6;  
+    animation:blink 2s infinite;  
+}  
+@keyframes blink{  
+    0%,100%{opacity:.2;}  
+    50%{opacity:1;}  
+}  
+  
+/* ===== FOOTER ===== */  
+footer{  
+    padding:30px;  
+    text-align:center;  
+    font-size:14px;  
+    opacity:.8;  
+}  
+  
+/* ===== ANIM ===== */  
+@keyframes fadeUp{  
+    from{opacity:0;transform:translateY(30px);}  
+    to{opacity:1;transform:translateY(0);}  
+}  
+</style>  </head>  <body>  
 
-<style>
-/* ===== GLOBAL ==== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-    scroll-behavior:smooth;
-}
-body{
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
-    color:white;
-    overflow-x:hidden;
-}
+<!-- TIMER -->  
+<div class="top-timer" id="countdown">Loading...</div>  
 
-/* ===== TOP TIMER ===== */
-.top-timer{
-    position:fixed;
-    top:15px;
-    left:50%;
-    transform:translateX(-50%);
-    padding:12px 28px;
-    border-radius:40px;
-    background:rgba(255,255,255,0.2);
-    backdrop-filter:blur(10px);
-    font-weight:bold;
-    z-index:9999;
-    box-shadow:0 5px 20px rgba(0,0,0,0.25);
-}
+<!-- HERO -->  
+<section class="hero">  
+    <h1>🎂 Happy Birthday My Bvv ❤️</h1>  
+    <p>  
+        Distance cannot stop love. This website is my heart, my hug,  
+        and my celebration sent directly to your phone.  
+    </p>  
+    <button class="btn" onclick="startSurprise()">  
+        Open Jluu'$ Surprise 💌  
+    </button>  
+</section>  
 
-/* ===== HERO ===== */
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
-}
-.hero h1{
-    font-size:3rem;
-    text-shadow:0 5px 20px rgba(0,0,0,.3);
-    animation:fadeUp 1.8s;
-}
-.hero p{
-    max-width:700px;
-    margin-top:20px;
-    font-size:1.2rem;
-    line-height:1.6;
-    animation:fadeUp 2.2s;
-}
-.btn{
-    margin-top:35px;
-    padding:14px 35px;
-    border:none;
-    border-radius:30px;
-    background:white;
-    color:#ff4d88;
-    font-size:1rem;
-    cursor:pointer;
-    transition:.3s;
-}
-.btn:hover{transform:scale(1.1);}
+<!-- LOVE LETTER -->  
+<section id="letter">  
+    <h2>For You Pgluu...💝</h2>  
+    <div class="glass">  
+My dikaa, happiest birthday to uhh pgll 💌🎂    
+You are my little little baby 🐤 and    
+the most precious part of my life 💫.    
+thank youhh very very much to come in my life 🌸 and    
+again very very thank you jivv jluu'$ 💗.    
+i am always with you 👫 my dika and    
+i am never leave you alone 💖 my bvvv.    
+when you talk 🗣️ you are look like a littel child ✨ and    
+that time i am fell very nervous 💓 and    
+very very very lov uhh.....🖤💖💌  
+    </div>  
+</section>  
 
-/* ===== SECTIONS ===== */
-section{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:70px 20px;
-}
-h2{
-    font-size:2.4rem;
-    margin-bottom:25px;
-}
-.glass{
-    background:rgba(255,255,255,.18);
-    backdrop-filter:blur(10px);
-    padding:30px;
-    border-radius:25px;
-    max-width:850px;
-    line-height:1.9;
-    font-size:1.1rem;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
-}
+<!-- MEMORIES -->  
+<section>  
+    <h2>📸 jluu🖤shitu </h2>  
+    <div class="gallery">  
+        <img src="5th.jpeg">  
+        <img src="1st.jpeg">  
+        <img src="2nd.jpeg">  
+        <img src="3rd.jpeg">  
+        <img src="4th.jpeg">  
+    </div>  
+</section>  
 
-/* ===== PHOTO GRID ===== */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    width:90%;
-    max-width:1000px;
-}
-.gallery img{
-    width:100%;
-    border-radius:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
-    transition:.4s;
-}
-.gallery img:hover{
-    transform:scale(1.05);
-}
+<!-- PROMISE -->  
+<section>  
+    <h2>🌙 Forever Promise My bvv</h2>  
+    <div class="glass">  
+        I promise to you bvv, i am always stand with you in every moment.  
+        Distance is temporary but our love is forever my bvv.  
+        One day we will celebrate every birthday together,and most happiest thing we both are there.  
+        Until that day, keep smiling because your smile is my favorite place.  
+    </div>  
+</section>  
 
-/* ===== FLOATING HEARTS ===== */
-.heart{
-    position:fixed;
-    bottom:-20px;
-    font-size:20px;
-    animation:float 6s linear infinite;
-    opacity:.7;
-    pointer-events:none;
-}
-@keyframes float{
-    0%{transform:translateY(0) scale(1);}
-    100%{transform:translateY(-110vh) scale(1.8);}
-}
+<!-- FINAL -->  
+<section>  
+    <h2>✨ My Final Wish</h2>  
+    <div class="glass">  
+        Thank you for being my partner, my best friend, and my forever person.  
+        Happy Birthday, my queen. ❤️  
+    </div>  
+</section>  
 
-/* ===== STARS ===== */
-.star{
-    position:fixed;
-    width:3px;
-    height:3px;
-    background:white;
-    border-radius:50%;
-    opacity:.6;
-    animation:blink 2s infinite;
-}
-@keyframes blink{
-    0%,100%{opacity:.2;}
-    50%{opacity:1;}
-}
+<footer>  
+    Made with ❤️ by Your Hubby jluu — Forever Yours  
+</footer>  
 
-/* ===== FOOTER ===== */
-footer{
-    padding:30px;
-    text-align:center;
-    font-size:14px;
-    opacity:.8;
-}
-
-/* ===== ANIM ===== */
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
-}
-</style>
-</head>
-
-<body>
-
-<!-- TIMER -->
-<div class="top-timer" id="countdown">Loading...</div>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>🎂 Happy Birthday My Bvv ❤️</h1>
-    <p>
-        Distance cannot stop love. This website is my heart, my hug,
-        and my celebration sent directly to your phone.
-    </p>
-    <button class="btn" onclick="document.getElementById('letter').scrollIntoView()">
-        Open Jluu'$ Surprise 💌
-    </button>
-</section>
-
-<!-- LOVE LETTER -->
-<section id="letter">
-    <h2>For You Pgluu...💝</h2>
-    <div class="glass">
-My dikaa, happiest birthday to uhh pgll 💌🎂  
-You are my little little baby 🐤 and  
-the most precious part of my life 💫.  
-thank youhh very very much to come in my life 🌸 and  
-again very very thank you jivv jluu'$ 💗.  
-i am always with you 👫 my dika and  
-i am never leave you alone 💖 my bvvv.  
-when you talk 🗣️ you are look like a littel child ✨ and  
-that time i am fell very nervous 💓 and  
-very very very lov uhh.....🖤💖💌
-    </div>
-</section>
-
-<!-- MEMORIES -->
-<section>
-    <h2>📸 jluu🖤shitu </h2>
-    <div class="gallery">
-        <img src="5th.jpeg">
-        <img src="1st.jpeg">
-        <img src="2nd.jpeg">
-        <img src="3rd.jpeg">
-        <img src="4th.jpeg">
-    </div>
-</section>
-
-<!-- PROMISE -->
-<section>
-    <h2>🌙 Forever Promise My bvv</h2>
-    <div class="glass">
-        I promise to you bvv, i am always stand with you in every moment.
-        Distance is temporary but our love is forever my bvv.
-        One day we will celebrate every birthday together,and most happiest thing we both are there.
-        Until that day, keep smiling because your smile is my favorite place.
-    </div>
-</section>
-
-<!-- FINAL -->
-<section>
-    <h2>✨ My Final Wish</h2>
-    <div class="glass">
-        Thank you for being my partner, my best friend, and my forever person.
-        Happy Birthday, my queen. ❤️
-    </div>
-</section>
-
-<footer>
-    Made with ❤️ by Your Hubby jluu — Forever Yours
-</footer>
-
-<!-- MUSIC -->
-<audio autoplay loop>
+<!-- MUSIC (ONLY CHANGED PART) -->
+<audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<script>
-// ===== COUNTDOWN TO TOMORROW =====
-const now = new Date();
-const targetDate = new Date(
-    now.getFullYear(),
-    now.getMonth(),
-    now.getDate()+1,0,0,0
-);
-
-function updateCountdown(){
-    const current = new Date();
-    const diff = targetDate-current;
-
-    if(diff<=0){
-        document.getElementById("countdown").innerHTML=
-        "🎉 Happy Birthday My dikaa ❤️";
-        return;
-    }
-
-    const h=Math.floor((diff/(1000*60*60))%24);
-    const m=Math.floor((diff/(1000*60))%60);
-    const s=Math.floor((diff/1000)%60);
-
-    document.getElementById("countdown").innerHTML=
-        `🎂 Birthday in ${h}h ${m}m ${s}s`;
+<script>  
+function startSurprise(){
+    const music = document.getElementById("bgMusic");
+    music.play().catch(()=>{});
+    document.getElementById('letter').scrollIntoView({behavior:"smooth"});
 }
-setInterval(updateCountdown,1000);
-updateCountdown();
 
-// hearts
-function heart(){
- let h=document.createElement("div");
- h.classList.add("heart");
- h.innerHTML="💌";
- h.style.left=Math.random()*100+"vw";
- h.style.animationDuration=(Math.random()*3+3)+"s";
- document.body.appendChild(h);
- setTimeout(()=>h.remove(),6000);
-}
-setInterval(heart,300);
-
-// stars
-for(let i=0;i<100;i++){
- let s=document.createElement("div");
- s.classList.add("star");
- s.style.left=Math.random()*100+"vw";
- s.style.top=Math.random()*100+"vh";
- s.style.animationDelay=Math.random()*2+"s";
- document.body.appendChild(s);
-}
-</script>
-
-</body>
+// ===== COUNTDOWN TO TOMORROW =====  
+const now = new Date();  
+const targetDate = new Date(  
+    now.getFullYear(),  
+    now.getMonth(),  
+    now.getDate()+1,0,0,0  
+);  
+  
+function updateCountdown(){  
+    const current = new Date();  
+    const diff = targetDate-current;  
+  
+    if(diff<=0){  
+        document.getElementById("countdown").innerHTML=  
+        "🎉 Happy Birthday My dikaa ❤️";  
+        return;  
+    }  
+  
+    const h=Math.floor((diff/(1000*60*60))%24);  
+    const m=Math.floor((diff/(1000*60))%60);  
+    const s=Math.floor((diff/1000)%60);  
+  
+    document.getElementById("countdown").innerHTML=  
+        `🎂 Birthday in ${h}h ${m}m ${s}s`;  
+}  
+setInterval(updateCountdown,1000);  
+updateCountdown();  
+  
+// hearts  
+function heart(){  
+ let h=document.createElement("div");  
+ h.classList.add("heart");  
+ h.innerHTML="💌";  
+ h.style.left=Math.random()*100+"vw";  
+ h.style.animationDuration=(Math.random()*3+3)+"s";  
+ document.body.appendChild(h);  
+ setTimeout(()=>h.remove(),6000);  
+}  
+setInterval(heart,300);  
+  
+// stars  
+for(let i=0;i<100;i++){  
+ let s=document.createElement("div");  
+ s.classList.add("star");  
+ s.style.left=Math.random()*100+"vw";  
+ s.style.top=Math.random()*100+"vh";  
+ s.style.animationDelay=Math.random()*2+"s";  
+ document.body.appendChild(s);  
+}  
+</script>  </body>  
 </html>
