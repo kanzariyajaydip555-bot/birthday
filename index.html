@@ -6,131 +6,278 @@
 <title>Happy Birthday My Love ❤️</title>
 
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', cursive;
-    background: linear-gradient(135deg, #ff4e50, #fc913a);
-    text-align: center;
-    color: white;
-    overflow-x: hidden;
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+    scroll-behavior:smooth;
+}
+body{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+    color:white;
+    overflow-x:hidden;
 }
 
-.container {
-    padding: 20px;
+/* ===== TOP TIMER ===== */
+.top-timer{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:12px 28px;
+    border-radius:40px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+    font-weight:bold;
+    z-index:9999;
+    box-shadow:0 5px 20px rgba(0,0,0,0.25);
 }
 
-h1 {
-    font-size: 35px;
-    animation: glow 2s infinite alternate;
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+.hero h1{
+    font-size:3rem;
+    text-shadow:0 5px 20px rgba(0,0,0,.3);
+    animation:fadeUp 1.8s;
+}
+.hero p{
+    max-width:700px;
+    margin-top:20px;
+    font-size:1.2rem;
+    line-height:1.6;
+    animation:fadeUp 2.2s;
+}
+.btn{
+    margin-top:35px;
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff4d88;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+.btn:hover{transform:scale(1.1);}
+
+/* ===== SECTIONS ===== */
+section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:70px 20px;
+}
+h2{
+    font-size:2.4rem;
+    margin-bottom:25px;
+}
+.glass{
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:25px;
+    max-width:850px;
+    line-height:1.9;
+    font-size:1.1rem;
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px white; }
-    to { text-shadow: 0 0 25px pink; }
+/* ===== PHOTO GRID ===== */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    width:90%;
+    max-width:1000px;
+}
+.gallery img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    transition:.4s;
+}
+.gallery img:hover{
+    transform:scale(1.05);
 }
 
-.photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid white;
-    object-fit: cover;
-    margin: 15px;
-    box-shadow: 0 0 20px white;
+/* ===== FLOATING HEARTS ===== */
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:20px;
+    animation:float 6s linear infinite;
+    opacity:.7;
+    pointer-events:none;
+}
+@keyframes float{
+    0%{transform:translateY(0) scale(1);}
+    100%{transform:translateY(-110vh) scale(1.8);}
 }
 
-button {
-    padding: 15px 25px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    background: white;
-    color: #ff4e50;
-    cursor: pointer;
-    transition: 0.3s;
+/* ===== STARS ===== */
+.star{
+    position:fixed;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    opacity:.6;
+    animation:blink 2s infinite;
+}
+@keyframes blink{
+    0%,100%{opacity:.2;}
+    50%{opacity:1;}
 }
 
-button:hover {
-    background: pink;
-    color: white;
-    transform: scale(1.1);
+/* ===== FOOTER ===== */
+footer{
+    padding:30px;
+    text-align:center;
+    font-size:14px;
+    opacity:.8;
 }
 
-.message {
-    display: none;
-    font-size: 20px;
-    margin-top: 20px;
-    animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-/* Floating Hearts */
-.heart {
-    position: fixed;
-    bottom: -10px;
-    color: pink;
-    animation: float 6s linear infinite;
-    font-size: 24px;
-}
-
-@keyframes float {
-    0% {transform: translateY(0);}
-    100% {transform: translateY(-100vh);}
+/* ===== ANIM ===== */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(30px);}
+    to{opacity:1;transform:translateY(0);}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>🎂 Happy Birthday MY LOVE 💖</h1>
-    
-    <img src="HER_PHOTO_URL" class="photo">
-    <img src="YOUR_PHOTO_URL" class="photo">
-    
-    <br><br>
-    
-    <button onclick="showMessage()">Click For Surprise 💌</button>
-    
-    <div class="message" id="msg">
-        💖 My Dearest YOUR_WIFE_NAME 💖 <br><br>
-        Even though miles separate us,  
-        my heart beats only for you.  
-        You are my happiness, my strength,  
-        my forever and always. ❤️ <br><br>
-        
-        I promise to celebrate every birthday  
-        together in the future. 🌹  
-        
-        I love you more than words can say. 💕  
-        Forever yours.
+<!-- TIMER -->
+<div class="top-timer" id="countdown">Loading...</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>🎂 Happy Birthday My Love ❤️</h1>
+    <p>
+        Distance cannot stop love. This website is my heart, my hug,
+        and my celebration sent directly to your phone.
+    </p>
+    <button class="btn" onclick="document.getElementById('letter').scrollIntoView()">
+        Open My Surprise 💌
+    </button>
+</section>
+
+<!-- LOVE LETTER -->
+<section id="letter">
+    <h2>💖 My Love Letter</h2>
+    <div class="glass">
+        My love, today the world became more beautiful because you were born.
+        You are my happiness, my peace, and the reason my heart smiles every day.
+        Even though miles separate us, my love reaches you every second.
+        I wish I could hold your hand, look into your eyes, and celebrate beside you.
+        Until then, let this page remind you how deeply you are loved.
     </div>
-</div>
+</section>
+
+<!-- MEMORIES -->
+<section>
+    <h2>📸 Our Beautiful Memories</h2>
+    <div class="gallery">
+        <img src="1st.jpeg">
+        <img src="2nd.jpeg">
+        <img src="3rd.jpeg">
+        <img src="4th.jpeg">
+    </div>
+</section>
+
+<!-- PROMISE -->
+<section>
+    <h2>🌙 Forever Promise</h2>
+    <div class="glass">
+        I promise to support you, to love you, and to stand beside you in every moment.
+        Distance is temporary — our love is forever.
+        One day we will celebrate every birthday together, laughing side by side.
+        Until that day, keep smiling because your smile is my favorite place.
+    </div>
+</section>
+
+<!-- FINAL -->
+<section>
+    <h2>✨ My Final Wish</h2>
+    <div class="glass">
+        May your life be filled with happiness, success, peace, and endless love.
+        Thank you for being my partner, my best friend, and my forever person.
+        Happy Birthday, my queen. ❤️
+    </div>
+</section>
+
+<footer>
+    Made with ❤️ by Your Husband — Forever Yours
+</footer>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
 
 <script>
-function showMessage() {
-    document.getElementById("msg").style.display = "block";
+// ===== COUNTDOWN TO TOMORROW =====
+const now = new Date();
+const targetDate = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate()+1,0,0,0
+);
+
+function updateCountdown(){
+    const current = new Date();
+    const diff = targetDate-current;
+
+    if(diff<=0){
+        document.getElementById("countdown").innerHTML=
+        "🎉 Happy Birthday My dikaa ❤️";
+        return;
+    }
+
+    const h=Math.floor((diff/(1000*60*60))%24);
+    const m=Math.floor((diff/(1000*60))%60);
+    const s=Math.floor((diff/1000)%60);
+
+    document.getElementById("countdown").innerHTML=
+        `🎂 Birthday in ${h}h ${m}m ${s}s`;
 }
+setInterval(updateCountdown,1000);
+updateCountdown();
 
-function createHeart() {
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML = "❤️";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 6000);
+// hearts
+function heart(){
+ let h=document.createElement("div");
+ h.classList.add("heart");
+ h.innerHTML="❤️";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(Math.random()*3+3)+"s";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
 }
+setInterval(heart,300);
 
-setInterval(createHeart, 300);
+// stars
+for(let i=0;i<100;i++){
+ let s=document.createElement("div");
+ s.classList.add("star");
+ s.style.left=Math.random()*100+"vw";
+ s.style.top=Math.random()*100+"vh";
+ s.style.animationDelay=Math.random()*2+"s";
+ document.body.appendChild(s);
+}
 </script>
 
 </body>
