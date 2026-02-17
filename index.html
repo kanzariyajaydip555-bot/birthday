@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', cursive;
+    background: linear-gradient(135deg, #ff4e50, #fc913a);
+    text-align: center;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 35px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px white; }
+    to { text-shadow: 0 0 25px pink; }
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    margin: 15px;
+    box-shadow: 0 0 20px white;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4e50;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: pink;
+    color: white;
+    transform: scale(1.1);
+}
+
+.message {
+    display: none;
+    font-size: 20px;
+    margin-top: 20px;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: pink;
+    animation: float 6s linear infinite;
+    font-size: 24px;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎂 Happy Birthday MY LOVE 💖</h1>
+    
+    <img src="HER_PHOTO_URL" class="photo">
+    <img src="YOUR_PHOTO_URL" class="photo">
+    
+    <br><br>
+    
+    <button onclick="showMessage()">Click For Surprise 💌</button>
+    
+    <div class="message" id="msg">
+        💖 My Dearest YOUR_WIFE_NAME 💖 <br><br>
+        Even though miles separate us,  
+        my heart beats only for you.  
+        You are my happiness, my strength,  
+        my forever and always. ❤️ <br><br>
+        
+        I promise to celebrate every birthday  
+        together in the future. 🌹  
+        
+        I love you more than words can say. 💕  
+        Forever yours.
+    </div>
+</div>
+
+<script>
+function showMessage() {
+    document.getElementById("msg").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
